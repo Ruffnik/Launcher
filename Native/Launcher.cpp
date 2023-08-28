@@ -71,6 +71,6 @@ int WinMain(_In_ HINSTANCE Instance, _In_opt_ HINSTANCE PrevInstance, _In_ LPSTR
 	if (FileName.empty())
 		Throw(ERROR_PATH_NOT_FOUND);
 	auto Arguments = GetValue(L"Arguments");
-	if (32 >= reinterpret_cast<INT_PTR>(ShellExecute(nullptr, nullptr, FileName.c_str(), Arguments.empty() ? nullptr : Arguments.c_str(), Launcher.parent_path().c_str(), ShowCmd)))
+	if (32 >= reinterpret_cast<INT_PTR>(ShellExecute(nullptr, nullptr, FileName.c_str(), Arguments.empty() ? nullptr : Arguments.c_str(), Launcher.parent_path().c_str(), ShowCmd)))//learn.microsoft.com/windows/win32/api/shellapi/nf-shellapi-shellexecutew
 		Throw(GetLastError());
 }
