@@ -62,7 +62,7 @@ void Throw(DWORD Error)
 
 int WinMain(_In_ HINSTANCE Instance, _In_opt_ HINSTANCE PrevInstance, _In_ LPSTR CmdLine, _In_ int ShowCmd)
 {
-	Launcher = Remove(GetCommandLine(), '"');
+	Launcher = Remove(GetCommandLine(), '"');//TODO: validate (& fix) when passed parameters
 	INI = Launcher.replace_extension("ini");
 	if (!exists(INI))
 		Throw(ERROR_FILE_NOT_FOUND);
